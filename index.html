@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <style>
+      body {
+	  font-family: 'Open Sans', verdana, arial, sans-serif;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Индекс потребительских цен в процентах за сентябрь 2013 г. по отношению к предыдущему месяцу</h1>
+    <!-- <div id="tester" style="width:600px;height:250px;"></div> -->
+    <div id="plot"></div>
+  </body>
+  <!-- <script> -->
+    <!-- 	TESTER = document.getElementById('tester'); -->
+    <!-- 	Plotly.plot( TESTER, [{ -->
+    <!-- 	x: [1, 2, 3, 4, 5], -->
+    <!-- 	y: [1, 2, 4, 8, 16] }], { -->
+    <!-- 	margin: { t: 0 } } ); -->
+    <!-- </script> -->
+  <script>
+    let titles = ['Горячая вода',
+	     'Услуги парикмахерских',
+	     'Фарш мясной, кг',
+	     'Рыба, кг',
+	     'Сыр',
+	     'Чай',
+	     'Картофель',
+	     'Одежда и белье',
+	     'Персональные компьютеры',
+	     'Сотовые телефоны',
+	     'Колдрекс, порошок 5 г, 10 пакетов',
+	     'Аспирин',
+	     'Проезд на автобусе',
+	     'Проезд в поезде плацкарт',
+	     'Посещение детского ясли-сада',
+	     'Лечение кариеса, пломба',
+	     'Удостоверение завещания у нотариуса',
+	     'Обслуживание банковской карты',
+	     'Услуги среднего образования',
+	     'Обучение в государственных обр. учр. ВПО',
+	     'Ксерокопирование документа, лист',
+	    ];
+    let values = [100,
+	     100.2,
+	     107.7,
+	     99.33,
+	     103.87,
+	     99.45,
+	     74.69,
+	     101.05,
+	     94.46,
+	     105.05,
+	     99.45,
+	     99.01,
+	     104.58,
+	     92.48,
+	     100,
+	     102.79,
+	     100,
+	     100,
+	     100.9,
+	     108.46,
+	     104.64
+	    ]
+    let data = [
+	{
+	    x: values,
+	    y: titles,
+	    type: 'bar',
+	    orientation: 'h',
+	}
+    ]
+    let layout = {
+	// autosize: true,
+	height: 3000,
+	font: {
+	    size: 22,
+	},
+	margin: {
+	    l: 600,
+	},
+    }
+    Plotly.newPlot('plot', data, layout, {responsive: true})
+  </script>
+  
+  
+</html>
